@@ -2,6 +2,7 @@ package com.navdroid.kotlinFlowSample.dao
 
 import androidx.room.* // ktlint-disable no-wildcard-imports
 import com.navdroid.kotlinFlowSample.model.MessageModel
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MessageDao {
@@ -24,5 +25,5 @@ interface MessageDao {
     fun getAllMessages(): List<MessageModel>
 
     @Query("SELECT * FROM MyTable")
-    fun fetchAllRecords(): List<MessageModel>
+    fun fetchAllRecords(): Flow<List<MessageModel>>
 }

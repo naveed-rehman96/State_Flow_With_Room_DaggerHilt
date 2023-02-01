@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    var adapter: MessageAdapter ? = null
+    var adapter: MessageAdapter? = null
 
     private lateinit var connectivityObserver: ConnectivityObserver
 
@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                     ConnectivityObserver.Status.Lost -> {
                         Toast.makeText(this@MainActivity, "Lost", Toast.LENGTH_SHORT)
                             .show()
-
                     }
                 }
             }

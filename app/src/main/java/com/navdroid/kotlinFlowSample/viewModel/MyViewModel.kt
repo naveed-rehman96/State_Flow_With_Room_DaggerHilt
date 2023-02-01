@@ -28,7 +28,7 @@ class MyViewModel @Inject constructor(private val repo: MessageRepo) : ViewModel
         }.catch {
             _allCvListStateFlow.value = MessageDataState.Failure(it)
         }.collect {
-            _allCvListStateFlow.value = MessageDataState.Success(it as MutableList<MessageModel>)
+            _allCvListStateFlow.value = MessageDataState.Success(it)
         }
     }
 }
